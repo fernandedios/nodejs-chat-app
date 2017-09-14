@@ -3,7 +3,8 @@
 io.on('connection', (socket) => {
   console.log('New user connected');
 
-  create event, send to client
+  // create event, send to client
+  // emits to one connection
   socket.emit('newEmail', {
     from: 'mike@example.com',
     text: 'Hey, what is going on',
