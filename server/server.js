@@ -21,7 +21,7 @@ io.on('connection', (socket) => {
   //emit to all connection
   socket.emit('newMessage', generateMessage('Admin', 'Welcome to the chat app'));
 
-  // send to all except the originator
+  // send to all except the event originator
   socket.broadcast.emit('newMessage', generateMessage('Admin', 'New user joined'));
 
   socket.on('createMessage', (message, callback) => {
