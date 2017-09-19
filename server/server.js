@@ -47,14 +47,23 @@ io.on('connection', (socket) => {
   });
 
   socket.on('createMessage', (message, callback) => {
-    console.log('createMessage', message);
+    // console.log('createMessage', message);
+    let user = users.getUser(socket.id);
 
-    io.emit('newMessage', generateMessage(message.from, message.text));
-    callback('This is from the server');
+    if (user && isRealString(message.text)) {
+      // broadcast only to room
+      io.to(user.room).emit('newMessage', generateMessage(user.name, message.text));
+    }
+    callback();
   });
 
   socket.on('createLocationMessage', (coords) => {
-    io.emit('newLocationMessage', generateLocationMessage('Admin', coords.latitude, coords.longitude));
+    let user = users.getUser(socket.id);
+
+    if (user) {
+      // broadcast only to room
+      io.to(user.room).emit('newLocationMessage', generateLocationMessage(user.name, coords.latitude, coords.longitude));
+    }
   });
 
   // event listener for disconnected user
