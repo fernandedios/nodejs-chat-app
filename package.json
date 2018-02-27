@@ -1,7 +1,7 @@
 {
-  "name": "node-chat-app",
+  "name": "nodejs-chat-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Express Socket.io chat application",
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
@@ -12,7 +12,7 @@
     "node": "6.2.2"
   },
   "author": "Fernan de Dios",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.14.0",
     "moment": "^2.15.1",
