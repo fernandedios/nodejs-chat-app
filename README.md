@@ -25,6 +25,10 @@ Basic testing is implemented via Mocha
 $ npm test
 ```
 
+Preview
+---------
+Access the [application preview].
+
 
 Thanks
 ------
@@ -36,3 +40,4 @@ nodejs-chat-app* © 2017, Fernan de Dios. Released under the [MIT License].<br>
 > Twitter [@fernan_de_dios](https://twitter.com/fernan_de_dios)
 
 [MIT License]: http://mit-license.org/
+[application preview]: https://nodejs-chat-app-sampler.herokuapp.com/
